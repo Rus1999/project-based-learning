@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -12,17 +13,25 @@
 </body>
 <h1>Base Numer Convertor</h1>
 
+<h2 id="glob-warn" class="warn">&nbsp;</h2>
+
 <section>
-  <label for="dec-input">Decimal</label>
-  <input id="dec-input" type="text">
-</section>
-<section>
-  <label for="hex-input">Hexadecimal</label>
-  <input id="hex-input" type="number">
-</section>
-<section>
-  <label for="bi-input">Binary</label>
-  <input id="bi-input" type="number">
+
+  <div class="input-group">
+    <label for="dec-input">Decimal</label>
+    <textarea id="dec-input" type="text" maxlength="100" rows="4" cols="25"></textarea>
+    <span id="dec-warn" class="warn"></span>
+  </div>
+  <div class="input-group">
+    <label for="hex-input">Hexadecimal</label>
+    <textarea id="hex-input" type="text" maxlength="100" rows="4" cols="25"></textarea>
+    <span id="hex-warn" class="warn"></span>
+  </div>
+  <div class="input-group">
+    <label for="bi-input">Binary</label>
+    <textarea id="bi-input" type="text" maxlength="100" rows="4" cols="25"></textarea>
+    <span id="bi-warn" class="warn"></span>
+  </div>
 </section>
 
 <script src="./app.js"></script>
