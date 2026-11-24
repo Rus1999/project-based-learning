@@ -72,6 +72,9 @@ function checkInput() {
 function decToBinary(decVal, fullBinary = "") {
   // console.log(decVal);
 
+  // TODO: Added edge case to catch number 0 (right now if 0 enter it will result with an empty string)
+
+
   if (decVal / 2 === 0) {
     console.log(fullBinary);
     console.log("===");
@@ -91,11 +94,25 @@ function decToBinary(decVal, fullBinary = "") {
   return decToBinary(Math.trunc(decVal / 2), fullBinary);
 }
 
-function decToHex() { }
-function hexToDec() { }
-function hexToBinary() { }
-function binaryToDec() { }
-function binaryToHex() { }
+function decToHex() {
+  // TODO: Added functionality
+}
+
+function hexToDec() {
+  // TODO: Added functionality
+}
+
+function hexToBinary() {
+  // TODO: Added functionality
+}
+
+function binaryToDec() {
+  // TODO: Added functionality
+}
+
+function binaryToHex() {
+  // TODO: Added functionality
+}
 
 
 decInput.addEventListener("input", checkInput);
