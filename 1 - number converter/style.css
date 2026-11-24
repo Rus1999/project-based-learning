@@ -23,6 +23,10 @@ span {
   min-width: 600px;
 }
 
+textarea {
+  resize: none;
+}
+
 #glob-warn {
   vertical-align: bottom;
   font-size: 1rem;

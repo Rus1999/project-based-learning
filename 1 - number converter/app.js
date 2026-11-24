@@ -10,8 +10,8 @@ const biWarn = document.getElementById('bi-warn');
 decWarn.innerText = "";
 
 function checkInput() {
-  console.log(this.value);
-  console.log(this.value.length);
+  // console.log(this.value);
+  // console.log(this.value.length);
 
   if (this.value.length >= 100) {
     globWarn.innerText = "Your number is too big or your text is too long";
@@ -31,7 +31,11 @@ function checkInput() {
       this.value = newText;
     } else {
       decWarn.innerText = "";
+
+      biInput.value = decToBinary(inputText);
     }
+
+
   } else if (this.id === "hex-input") {
     const reg = /[^0-9a-f]/g;
 
@@ -63,10 +67,40 @@ function checkInput() {
       biWarn.innerText = "";
     }
   }
-
-  // TODO actual calculation
 }
+
+function decToBinary(decVal, fullBinary = "") {
+  // console.log(decVal);
+
+  if (decVal / 2 === 0) {
+    console.log(fullBinary);
+    console.log("===");
+    return fullBinary;
+  } else if (decVal / 2 === 1) {
+    // console.log(decVal / 2);
+    // console.log(decVal % 2);
+    fullBinary = `${decVal / 2}${decVal % 2}${fullBinary}`;
+    console.log(fullBinary);
+    console.log("===");
+    return fullBinary;
+  }
+
+  // console.log(decVal % 2);
+  fullBinary = (decVal % 2) + fullBinary;
+  // console.log(fullBinary);
+  return decToBinary(Math.trunc(decVal / 2), fullBinary);
+}
+
+function decToHex() { }
+function hexToDec() { }
+function hexToBinary() { }
+function binaryToDec() { }
+function binaryToHex() { }
+
 
 decInput.addEventListener("input", checkInput);
 hexInput.addEventListener("input", checkInput);
 biInput.addEventListener("input", checkInput);
+
+
+module.exports({ decToBinary });
